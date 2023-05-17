@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -13,34 +13,41 @@ const Header = () => {
       </div>
       <div className="flex flex-grow justify-between items-center gap-2">
         <div className="text-white">
-          <NavLink className={({isActive}) => isActive? " bg-orange-400 bg-opacity-70 p-3 rounded mr-4 text-xl" : "mr-4 text-xl"} to="/">
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? " bg-black bg-opacity-70 p-3 rounded mr-4 text-xl"
+                : "mr-4 text-xl"
+            }
+            to="/"
+          >
             Home
           </NavLink>
-          <NavLink className={({isActive}) => isActive? " bg-orange-400 p-3 rounded bg-opacity-70 mr-4 text-xl" : "mr-4 text-xl"} to="/">
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? " bg-black p-3 rounded bg-opacity-70 mr-4 text-xl"
+                : "mr-4 text-xl"
+            }
+            to="/"
+          >
             All Toy{" "}
           </NavLink>
-          <NavLink className={({isActive}) => isActive? " bg-orange-400 p-3 rounded bg-opacity-70 mr-4 text-xl" : "mr-4 text-xl"} to="/">
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? " bg-black p-3 rounded bg-opacity-70 mr-4 text-xl"
+                : "mr-4 text-xl"
+            }
+            to="/"
+          >
             Blogs
           </NavLink>
         </div>
-        <div className="form-control">
-          <label className="input-group">
-            <input
-              type="text"
-              placeholder="Search"
-              className="input input-bordered"
-            />
-            <span className="btn btn-active">Search</span>
-          </label>
-          {/* <div className="w-10 rounded-full">
-              <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-            </div> */}
+        <div>
+          <Link to="/login" className="btn ml-3">Login</Link>
+          <Link to="/register" className="btn ml-3">Register</Link>
         </div>
-        {/* <div className="dropdown dropdown-end">
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            
-          </label>
-        </div> */}
       </div>
     </div>
   );
