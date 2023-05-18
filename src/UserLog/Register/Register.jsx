@@ -1,9 +1,50 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGoogle } from "react-icons/fa";
 import Header from "../../Share/Header/Header";
 import Footer from "../../Share/Footer/Footer";
+import { AuthContext } from '../../PriveteRout/PriveteContext/PriveteContext';
 
 const Register = () => {
+
+    const {register, googleSignIn} = useContext(AuthContext)
+
+    // email & register from handler function 
+
+    const handleRegister = event =>{
+        event.preventDefault()
+        const from = event.target 
+        const name = from.name.value 
+        const email = from.email.value 
+        const password = from.password.value 
+        const photo = from.photo.value 
+
+        register(email, password)
+        .then(result => {
+            const user = result.user
+            console.log(user)
+        })
+        .catch(error =>{
+            console.log(error.code)
+        })
+        
+    }
+
+    // handle google register 
+    const googleSigninHandler = () =>{
+        googleSignIn()
+        .then(result => {
+            const user = result.user
+            console.log(user)
+        })
+        .catch(error =>{
+            console.log(error.code)
+        })
+        
+    }
+
+
+
+
     return (
         <div className="min-h-screen bg-purple-400">
         <Header></Header>
@@ -11,7 +52,7 @@ const Register = () => {
         Register now
       </h1>
       <div className="card-body w-1/2 mx-auto ">
-        <form>
+        <form onSubmit={handleRegister}>
           <div className="form-control">
             <label className="label">
               <span className="text-lg">Name</span>
@@ -21,6 +62,7 @@ const Register = () => {
               placeholder="name"
               name="name"
               className="input input-bordered"
+              required
             />
           </div>
           <div className="form-control">
@@ -32,6 +74,7 @@ const Register = () => {
               placeholder="email"
               name="email"
               className="input input-bordered"
+              required
             />
           </div>
           <div className="form-control">
@@ -43,6 +86,7 @@ const Register = () => {
               placeholder="password"
               name="password"
               className="input input-bordered"
+              required
             />
            
           </div>
@@ -63,7 +107,8 @@ const Register = () => {
         <div className="divider">OR</div>
         <div className="grid h-20 card bg-orange-300 rounded-box place-items-center">
           <div>
-            <div className="flex gap-2 items-center">
+            <div onClick={googleSigninHandler} className="flex gap-2 items-center">
+                
               <FaGoogle className="w-8 h-8" /> <span>Google</span>
             </div>
           </div>
