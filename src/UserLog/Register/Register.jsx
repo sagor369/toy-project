@@ -3,8 +3,30 @@ import { FaGoogle } from "react-icons/fa";
 import Header from "../../Share/Header/Header";
 import Footer from "../../Share/Footer/Footer";
 import { AuthContext } from '../../PriveteRout/PriveteContext/PriveteContext';
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import { toastify } from '../../Share/Toastify/Toastify';
+
 
 const Register = () => {
+
+    // react toastify code 
+    // const successToastify = (data) => {
+    //   // console.log(message)
+    //   toast.success(data, {
+    //   position: "top-center",
+    //   autoClose: 5000,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    //   theme: "light",
+    //   })};
+
+      
+
+    
 
     const {register, googleSignIn} = useContext(AuthContext)
 
@@ -22,12 +44,16 @@ const Register = () => {
         .then(result => {
             const user = result.user
             console.log(user)
+            toastify("Registation successfull")
         })
         .catch(error =>{
             console.log(error.code)
         })
+
+        from.reset()
         
     }
+  
 
     // handle google register 
     const googleSigninHandler = () =>{
@@ -35,6 +61,7 @@ const Register = () => {
         .then(result => {
             const user = result.user
             console.log(user)
+            successToastify()
         })
         .catch(error =>{
             console.log(error.code)
@@ -115,6 +142,18 @@ const Register = () => {
         </div>
       </div>
       <Footer></Footer>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
     );
 };

@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import Header from "../../Share/Header/Header";
 import Footer from "../../Share/Footer/Footer";
+import { ToastContainer } from "react-toastify";
+import { AuthContext } from "../../PriveteRout/PriveteContext/PriveteContext";
+import { toastify } from "../../Share/Toastify/Toastify";
 
 const Login = () => {
+  const {login} = useContext(AuthContext)
+
+
+
+// handle login function 
+
+  const handleLogin = (event) =>{
+    event.preventDefault()
+    const from = event.target 
+    const email = from.email.value 
+    const password = from.password.value 
+    login(email, password)
+    .then(result => {
+      const user = result.user 
+      console.log(user)
+      toastify('Login successfull')
+    })
+
+    .catch(error =>{
+      console.log(error.code)
+    })
+
+  }
+
   return (
     <div className="min-h-screen bg-purple-400">
         <Header></Header>
@@ -11,7 +38,7 @@ const Login = () => {
         Login now
       </h1>
       <div className="card-body w-1/2 mx-auto ">
-        <form>
+        <form onSubmit={handleLogin}>
           <div className="form-control">
             <label className="label">
               <span className="text-lg">Email</span>
@@ -19,7 +46,7 @@ const Login = () => {
             <input
               type="email"
               placeholder="email"
-              name="name"
+              name="email"
               className="input input-bordered"
             />
           </div>
@@ -53,6 +80,18 @@ const Login = () => {
         </div>
       </div>
       <Footer></Footer>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };

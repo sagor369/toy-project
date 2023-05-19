@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import "react-toastify/dist/ReactToastify.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Layout/Layout.jsx";
 import Home from "./Home/Home";
@@ -33,5 +34,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <PriveteContext>
       <RouterProvider router={router} />
     </PriveteContext>
+
+    
   </div>
 );
