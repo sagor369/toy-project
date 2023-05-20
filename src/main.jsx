@@ -7,6 +7,8 @@ import Home from "./Home/Home";
 import Login from "./UserLog/Login/Login";
 import Register from "./UserLog/Register/Register";
 import PriveteContext from "./PriveteRout/PriveteContext/PriveteContext";
+import AllCategory from "./Home/Rout/AllCategory/AllCategory";
+import '@smastrom/react-rating/style.css'
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,12 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
+      {
+        path:"/categorys",
+        element: <AllCategory></AllCategory>,
+        loader: () => fetch('http://localhost:5000/categorys')
+        
+      }
     ],
   },
   {

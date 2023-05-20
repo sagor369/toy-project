@@ -1,0 +1,176 @@
+  [
+    {
+      "pictureUrl": "https://i.ibb.co/5cC7SHw/download-12.jpg",
+      "name": "Adventure Explorer Walkie-Talkies",
+      "sellerName": "Outdoor Fun Store",
+      "sellerEmail": "sales@outdoorfunstore.com",
+      "subCategory": "Phones",
+      "price": 29.99,
+      "rating": 4.7,
+      "quantity": 12,
+      "detailDescription": "Embark on exciting adventures with the Adventure Explorer Walkie-Talkies. This set of two toy phones allows kids to communicate with each other from a distance. They feature a durable design, a built-in microphone, and a speaker for clear communication. Perfect for outdoor play and imaginative missions."
+    },
+    {
+      "pictureUrl": "https://i.ibb.co/r6vg9Dp/images-5.jpg",
+      "name": "Circuit Genius",
+      "sellerName": "ElectroKids",
+      "sellerEmail": "sales@electrokids.com",
+      "subCategory": "Robotics",
+      "price": 29.99,
+      "rating": 4.2,
+      "quantity": 15,
+      "detailDescription": "Circuit Genius is an educational electronic kit that teaches kids about circuits and electronics through hands-on experiments. It includes various components and a detailed instruction manual."
+    },
+    {
+      "pictureUrl": "https://i.ibb.co/JyB9Tr0/download-8.jpg",
+      "name": "MiniTech Smartphone",
+      "sellerName": "Techy Kids Store",
+      "sellerEmail": "sales@techykidsstore.com",
+      "subCategory": "Phones",
+      "price": 19.99,
+      "rating": 4.2,
+      "quantity": 8,
+      "detailDescription": "The MiniTech Smartphone is a realistic imitation phone for kids. It features a touch screen, colorful icons, and sound effects. Children can pretend to make calls, send messages, and take pictures with the built-in camera. The toy phone helps develop imagination and role-playing skills. Batteries included."
+    },
+    {
+      "pictureUrl": "https://i.ibb.co/hDPq304/images-6.jpg",
+      "name": "DroneX",
+      "sellerName": "FlightTech",
+      "sellerEmail": "contact@flighttech.com",
+      "subCategory": "Robotics",
+      "price": 149.99,
+      "rating": 4.8,
+      "quantity": 10,
+      "detailDescription": "DroneX is a high-performance drone with a built-in camera. It features intelligent flight modes, a stable flight control system, and real-time video transmission."
+    },
+    {
+      "pictureUrl": "https://i.ibb.co/r09k8m8/images-2.jpg",
+      "name": "MicroSquad",
+      "sellerName": "TechToys Inc.",
+      "sellerEmail": "info@techtoys.com",
+      "subCategory": "Robotics",
+      "price": 39.99,
+      "rating": 4.4,
+      "quantity": 12,
+      "detailDescription": "MicroSquad is a set of mini robots that can be programmed to perform coordinated tasks. They communicate wirelessly and can be controlled using a smartphone or tablet."
+    },
+    {
+      "pictureUrl": "https://i.ibb.co/yp6gHX6/images-3.jpg",
+      "name": "Circuit Explorer",
+      "sellerName": "ElectroKids",
+      "sellerEmail": "sales@electrokids.com",
+      "subCategory": "Robotics",
+      "price": 24.99,
+      "rating": 4.0,
+      "quantity": 18,
+      "detailDescription": "Circuit Explorer is an electronic kit that introduces kids to the world of circuits and electricity. It includes various components and a fun activity guide."
+    },
+    {
+        "pictureUrl": "https://i.ibb.co/1zXwMfY/images-25.jpg",
+        "name": "Super Speed Racer",
+        "sellerName": "Toy Galaxy",
+        "sellerEmail": "toyg@alaxy.com",
+        "subCategory": "Cars",
+        "price": 39.99,
+        "rating": 4.5,
+        "quantity": 10,
+        "detailDescription": "The Super Speed Racer is a high-performance remote control car designed for racing enthusiasts. It features a sleek design, powerful motor, and responsive controls. Race against your friends or set new lap records on your own. Suitable for both indoor and outdoor use. Batteries included."
+      },
+      {
+        "pictureUrl": "https://i.ibb.co/hZmX8Sc/images-18.jpg",
+        "name": "Transforming Robot Car",
+        "sellerName": "Tech Toys Inc.",
+        "sellerEmail": "info@techtoys.com",
+        "subCategory": "Robots",
+        "price": 49.99,
+        "rating": 4.2,
+        "quantity": 8,
+        "detailDescription": "The Transforming Robot Car is a versatile toy that can be enjoyed as both a car and a robot. Watch as it seamlessly transforms between the two modes with the push of a button. It features flashing lights, sound effects, and a remote control for easy operation. Requires 4 AA batteries (not included)."
+      },
+      {
+        "pictureUrl": "https://i.ibb.co/K58rGZk/images-19.jpg",
+        "name": "Off-Road Adventure Truck",
+        "sellerName": "Outdoor Fun Store",
+        "sellerEmail": "sales@outdoorfunstore.com",
+        "subCategory": "Cars",
+        "price": 29.99,
+        "rating": 4.7,
+        "quantity": 12,
+        "detailDescription": "Take your playtime off-road with the Off-Road Adventure Truck. This rugged vehicle can conquer any terrain with its large wheels and suspension system. The truck comes with a rechargeable battery and a remote control for easy maneuverability. It also features working headlights and realistic engine sounds."
+      },
+      
+      {
+        "pictureUrl": "https://i.ibb.co/hXRd0nm/images-22.jpg",
+        "name": "Stunt Jump Buggy",
+        "sellerName": "Fun Time Toys",
+        "sellerEmail": "sales@funtime.toys",
+        "subCategory": "Stunt Cars",
+        "price": 19.99,
+        "rating": 4.8,
+        "quantity": 15,
+        "detailDescription": "Perform gravity-defying stunts with the Stunt Jump Buggy. This agile car can flip, spin, and jump over obstacles with ease. It features a unique two"
+      },
+      {
+        "pictureUrl": "https://i.ibb.co/mG9HR8M/images-11.jpg",
+        "name": "SmartKids Learning Phone",
+        "sellerName": "Toy Universe",
+        "sellerEmail": "info@toyuniverse.com",
+        "subCategory": "Educational Phones",
+        "price": 24.99,
+        "rating": 4.5,
+        "quantity": 10,
+        "detailDescription": "The SmartKids Learning Phone is a fun and educational toy designed for young children. It features a vibrant touch screen, interactive buttons, and various learning activities. Kids can learn numbers, letters, animals, and play games while developing their cognitive skills. The toy phone requires 3 AAA batteries (included)."
+      },
+      {
+        "pictureUrl": "https://i.ibb.co/xfxJvT1/download-3.jpg",
+        "name": "RoboBot",
+        "sellerName": "TechToys Inc.",
+        "sellerEmail": "info@techtoys.com",
+        "subCategory": "Robotics",
+        "price": 49.99,
+        "rating": 4.5,
+        "quantity": 20,
+        "detailDescription": "RoboBot is a programmable robot that can perform various tasks and interact with its environment. It comes with a user-friendly interface and can be controlled using a mobile app."
+      },
+      
+      {
+        "pictureUrl": "https://i.ibb.co/0BZpL4q/images-17.jpg",
+        "name": "Drift King Racer",
+        "sellerName": "Speedy Toys",
+        "sellerEmail": "contact@speedytoys.com",
+        "subCategory": "Cars",
+        "price": 34.99,
+        "rating": 4.4,
+        "quantity": 5,
+        "detailDescription": "Experience the thrill of drifting with the Drift King Racer. This remote control car is designed for impressive sideways slides and precise control. It features a lightweight yet durable frame, adjustable suspension, and high-grip tires. The car comes with a rechargeable battery and a responsive remote control."
+      },
+      
+      {
+        "pictureUrl": "https://i.ibb.co/GM92rCJ/download-4.jpg",
+        "name": "Music & Play Toy Phone",
+        "sellerName": "Melody Toys",
+        "sellerEmail": "support@melodytoys.com",
+        "subCategory": "Phones",
+        "price": 14.99,
+        "rating": 4.4,
+        "quantity": 5,
+        "detailDescription": "The Music & Play Toy Phone is a delightful musical toy for toddlers. It features colorful buttons that play different melodies, animal sounds, and teach numbers. The toy phone has a sturdy construction and is designed to withstand rough play. It promotes fine motor skills, auditory development, and imaginative play."
+      },
+      {
+        "pictureUrl": "https://i.ibb.co/GJxR6fN/download-1.jpg",
+        "name": "SmartKids Interactive Watch Phone",
+        "sellerName": "Tech World Kids",
+        "sellerEmail": "info@techworldkids.com",
+        "subCategory": " Phones",
+        "price": 34.99,
+        "rating": 4.8,
+        "quantity": 15,
+        "detailDescription": "The SmartKids Interactive Watch Phone is a smartwatch designed for kids. It features a touch screen, various watch faces"
+      }
+  
+  
+  
+  
+    
+
+    ]

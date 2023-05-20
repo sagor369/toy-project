@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 import app from '../../firebase/firebase.config';
 
@@ -26,6 +26,13 @@ const PriveteContext = ({children}) => {
     const googleSignIn = () =>{
        return signInWithPopup(auth,  provaider)
     }
+
+    useEffect(()=>{
+        fetch("http://localhost:5000/categorys")
+        .then(res => res.json())
+        .then(data => console.log(data.length))
+
+    },[loading])
 
     const authInfo = {
         user,

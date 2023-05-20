@@ -23,6 +23,7 @@ const Login = () => {
       const user = result.user 
       console.log(user)
       toastify('Login successfull')
+      from.reset()
     })
 
     .catch(error =>{
