@@ -5,12 +5,13 @@ import Footer from "../../Share/Footer/Footer";
 import { ToastContainer } from "react-toastify";
 import { AuthContext } from "../../PriveteRout/PriveteContext/PriveteContext";
 import { toastify } from "../../Share/Toastify/Toastify";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const {login} = useContext(AuthContext)
+  const location = useLocation()
+  const form = location.state?.from?.pathname || '/'
   const navigate = useNavigate()
-  const form = '/'
 
 
 

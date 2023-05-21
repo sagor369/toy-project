@@ -6,7 +6,6 @@ import { FaUser} from 'react-icons/fa'
 const Header = () => {
   const { user, logOUt } = useContext(AuthContext);
   const photo = user?.photoURL
-  console.log(photo)
   return (
     <div className="navbar  px-8 py-5 bg-gradient-to-r from-purple-500 to-pink-500">
       <div className="flex-1">
@@ -42,7 +41,7 @@ const Header = () => {
           {user && (
             <>
               <NavLink
-                to="/categorys"
+                to="/addtoy"
                 className={({ isActive }) =>
                   isActive
                     ? " bg-black p-3 rounded bg-opacity-70 mr-4 text-xl"
@@ -52,7 +51,7 @@ const Header = () => {
                 Add Toys
               </NavLink>
               <NavLink
-                to="/categorys"
+                to="f"
                 className={({ isActive }) =>
                   isActive
                     ? " bg-black p-3 rounded bg-opacity-70 mr-4 text-xl"

@@ -9,6 +9,8 @@ import Register from "./UserLog/Register/Register";
 import PriveteContext from "./PriveteRout/PriveteContext/PriveteContext";
 import AllCategory from "./Home/Rout/AllCategory/AllCategory";
 import '@smastrom/react-rating/style.css'
+import PriveteRout from "./PriveteRout/PriveteContext/PriveteRout";
+import AddCategory from "./AddCategory/AddCategory";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +23,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/categorys",
-        element: <AllCategory></AllCategory>,
+        element: <PriveteRout><AllCategory></AllCategory></PriveteRout>,
         // loader: () => fetch('http://localhost:5000/categorys')
         
       }
@@ -35,6 +37,10 @@ const router = createBrowserRouter([
     path: "register",
     element: <Register></Register>,
   },
+  {
+    path: '/addtoy',
+    element : <AddCategory></AddCategory>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

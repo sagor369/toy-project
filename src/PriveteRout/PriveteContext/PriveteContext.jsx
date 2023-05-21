@@ -8,7 +8,7 @@ const PriveteContext = ({children}) => {
     const auth = getAuth(app)
     const provaider = new GoogleAuthProvider()
     const [user, setUser] = useState(null)
-    const [loading , setLoading] = useState(false)
+    const [loading , setLoading] = useState(true)
 
 
     // create uer in email & password 
@@ -44,11 +44,10 @@ const PriveteContext = ({children}) => {
         const unsucrib =()=>
             onAuthStateChanged(auth, currentUser =>{
                 setUser(currentUser)
-                setLoader(false)
+                setLoading(false)
             })
             return unsucrib()
-    },[])
-    console.log(user)
+    },[loading])
 
     const authInfo = {
         user,
@@ -56,6 +55,7 @@ const PriveteContext = ({children}) => {
         login,
         googleSignIn,
         logOUt,
+        loading
 
 
     }
