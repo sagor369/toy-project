@@ -11,7 +11,6 @@ const Categorys = () => {
         .then(data => setCategory(data))
 
     },[])
-    console.log(categorys)
     return (
         <div className='py-4 my-20 bg-opacity-40 bg-gradient-to-b from-purple-600 via-cyan-200 to-pink-500 '>
             <h2 className='text-5xl font-bold text-center py-4 text-pink-300 uppercase border-b mb-5'>category </h2>

@@ -5,9 +5,12 @@ import Footer from "../../Share/Footer/Footer";
 import { ToastContainer } from "react-toastify";
 import { AuthContext } from "../../PriveteRout/PriveteContext/PriveteContext";
 import { toastify } from "../../Share/Toastify/Toastify";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const {login} = useContext(AuthContext)
+  const navigate = useNavigate()
+  const form = '/'
 
 
 
@@ -24,6 +27,8 @@ const Login = () => {
       console.log(user)
       toastify('Login successfull')
       from.reset()
+      navigate(form, { replace: true })
+
     })
 
     .catch(error =>{
@@ -65,6 +70,12 @@ const Login = () => {
               <a href="#" className="label-text-alt link link-hover">
                 Forgot password?
               </a>
+            </label>
+            <label className="">
+              Create a new 
+              <Link to="register" className="label-text-alt text-md ml-2 text-orange-100 link link-hover">
+                Register
+              </Link>
             </label>
           </div>
           <div className="form-control mt-6">

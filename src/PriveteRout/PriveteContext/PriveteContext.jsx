@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
 import app from '../../firebase/firebase.config';
 
 export const AuthContext = createContext()
@@ -13,32 +13,49 @@ const PriveteContext = ({children}) => {
 
     // create uer in email & password 
     const register = (email, password) =>{
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     // login in user email & password  
     const login = (email, password) =>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth , email, password)
 
     }
 
     // google sign in user  
     const googleSignIn = () =>{
+        setLoading(true)
        return signInWithPopup(auth,  provaider)
     }
 
-    useEffect(()=>{
-        fetch("http://localhost:5000/categorys")
-        .then(res => res.json())
-        .then(data => console.log(data.length))
+    const logOUt = () =>{
+        signOut(auth).then(() => {
+            console.log('log out successfull')
+            
+          }).catch((error) => {
+            
+          }); 
+    }
 
-    },[loading])
+    useEffect(()=>{
+
+        const unsucrib =()=>
+            onAuthStateChanged(auth, currentUser =>{
+                setUser(currentUser)
+                setLoader(false)
+            })
+            return unsucrib()
+    },[])
+    console.log(user)
 
     const authInfo = {
         user,
         register,
         login,
         googleSignIn,
+        logOUt,
 
 
     }

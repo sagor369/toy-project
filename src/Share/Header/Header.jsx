@@ -1,6 +1,12 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../PriveteRout/PriveteContext/PriveteContext";
+import { FaUser} from 'react-icons/fa'
 
 const Header = () => {
+  const { user, logOUt } = useContext(AuthContext);
+  const photo = user?.photoURL
+  console.log(photo)
   return (
     <div className="navbar  px-8 py-5 bg-gradient-to-r from-purple-500 to-pink-500">
       <div className="flex-1">
@@ -24,15 +30,39 @@ const Header = () => {
             Home
           </NavLink>
           <NavLink
+            to="/categorys"
             className={({ isActive }) =>
               isActive
                 ? " bg-black p-3 rounded bg-opacity-70 mr-4 text-xl"
                 : "mr-4 text-xl"
             }
-            to="/"
           >
-            All Toy{" "}
+            All Toy
           </NavLink>
+          {user && (
+            <>
+              <NavLink
+                to="/categorys"
+                className={({ isActive }) =>
+                  isActive
+                    ? " bg-black p-3 rounded bg-opacity-70 mr-4 text-xl"
+                    : "mr-4 text-xl"
+                }
+              >
+                Add Toys
+              </NavLink>
+              <NavLink
+                to="/categorys"
+                className={({ isActive }) =>
+                  isActive
+                    ? " bg-black p-3 rounded bg-opacity-70 mr-4 text-xl"
+                    : "mr-4 text-xl"
+                }
+              >
+                My Toys
+              </NavLink>
+            </>
+          )}
           <NavLink
             className={({ isActive }) =>
               isActive
@@ -45,8 +75,29 @@ const Header = () => {
           </NavLink>
         </div>
         <div>
-          <Link to="/login" className="btn ml-3">Login</Link>
-          <Link to="/register" className="btn ml-3">Register</Link>
+          {!user?
+            <div>
+              <Link to="/login" className="btn ml-3">
+                Login
+              </Link>
+              <Link to="/register" className="btn ml-3">
+                Register
+              </Link>
+            </div>:
+            <div className="flex gap-4">
+              <button onClick={logOUt} className="btn ml-3">
+                Log out
+              </button>
+              <div  title={user?.displayName? user.displayName : "not user name set"}>
+                {!user.photoURL ? 
+                <FaUser className="w-10 h-10"/>:
+                <img className=" h-10 w-10 " src={photo} alt="user photo" />
+
+
+                }
+              </div>
+            </div>
+          }
         </div>
       </div>
     </div>
