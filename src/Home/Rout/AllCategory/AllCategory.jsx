@@ -6,15 +6,15 @@ const AllCategory = () => {
   const [cars, setCars] = useState([]);
   const [phones, setPhones] = useState([]);
   useEffect(async () => {
-    await fetch("http://localhost:5000/categorys/Robotics")
+    await fetch("https://toy-server-site-nine.vercel.app/toys/robotics")
       .then((res) => res.json())
       .then((data) => setRobot(data));
 
-    await fetch("http://localhost:5000/categorys/Cars")
+    await fetch("https://toy-server-site-nine.vercel.app/toys/cars")
       .then((res) => res.json())
       .then((data) => setCars(data));
 
-    await fetch("http://localhost:5000/categorys/Phones")
+    await fetch("https://toy-server-site-nine.vercel.app/toys/phones")
       .then((res) => res.json())
       .then((data) => setPhones(data));
   }, []);
