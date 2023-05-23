@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Category from "../../Category";
+// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 const AllCategory = () => {
   const [robot, setRobot] = useState([]);
@@ -20,10 +22,31 @@ const AllCategory = () => {
   }, []);
 
   return (
+
     <div className="py-4 my-20 bg-opacity-40 bg-gradient-to-b from-purple-600 via-cyan-200 to-pink-500 ">
+           
+
       <h2 className="text-5xl font-bold text-center py-4 text-pink-300 uppercase border-b mb-5">
         all category
       </h2>
+      {/* <Tabs>
+                <TabList>
+                    <Tab>
+                    robotics
+                    </Tab>
+                    <Tab>
+                    phones
+                    </Tab>
+                    <Tab>
+                    cars
+                    </Tab>
+                </TabList>
+            </Tabs>
+            <TabPanel>
+                <h2>robotics </h2>
+                <h2>phone </h2>
+                <h2>cars </h2>
+            </TabPanel> */}
 
       <h2 className="text-2xl font-bold w-72 bg-orange-500 mt-10 py-4 mb-6 text-white pl-4">
         Robotics sections

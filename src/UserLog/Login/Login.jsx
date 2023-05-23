@@ -67,14 +67,10 @@ const Login = () => {
               name="password"
               className="input input-bordered"
             />
-            <label className="label">
-              <a href="#" className="label-text-alt link link-hover">
-                Forgot password?
-              </a>
-            </label>
+          
             <label className="">
               Create a new 
-              <Link to="register" className="label-text-alt text-md ml-2 text-orange-100 link link-hover">
+              <Link to="/register" className=" ml-2 text-orange-100 link link-hover">
                 Register
               </Link>
             </label>

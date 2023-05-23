@@ -6,6 +6,7 @@ import { AuthContext } from '../../PriveteRout/PriveteContext/PriveteContext';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { toastify } from '../../Share/Toastify/Toastify';
+import { Link } from 'react-router-dom';
 
 
 const Register = () => {
@@ -127,6 +128,13 @@ const Register = () => {
             />
            
           </div>
+          <br />
+          <label className="">
+              Al ready have a account 
+              <Link to="/login" className=" ml-2 text-orange-100 link link-hover">
+                Login
+              </Link>
+            </label>
           <div className="form-control mt-6">
             <input className="btn btn-primary" type="submit" value="Register" />
           </div>
@@ -134,7 +142,7 @@ const Register = () => {
         <div className="divider">OR</div>
         <div className="grid h-20 card bg-orange-300 rounded-box place-items-center">
           <div>
-            <div onClick={googleSigninHandler} className="flex gap-2 items-center">
+            <div onClick={googleSigninHandler} className="flex cursor-pointer gap-2 items-center">
                 
               <FaGoogle className="w-8 h-8" /> <span>Google</span>
             </div>

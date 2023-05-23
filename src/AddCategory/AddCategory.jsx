@@ -4,6 +4,21 @@ const AddCategory = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const form = event.target
+    const name = form.name.value 
+    const sellerName = form.sellerName.value 
+    const email = form.email.value 
+    const photo = form.photo.value 
+    const price = form.price.value 
+    const rating = form.rating.value 
+    const quantity = form.quantity.value 
+    const category = form.select.value
+
+    const items = {
+      name,sellerName,email, photo,price , rating, quantity,category
+    }
+
+    fetch('')
   };
 
   const options = [5, 10, 15, 20];
@@ -55,6 +70,7 @@ const AddCategory = () => {
             <label className="input-group input-group-vertical">
               <span>Picture Url</span>
               <input
+                name="photo"
                 type="url"
                 placeholder="info@site.com"
                 className="input input-bordered"
@@ -67,6 +83,7 @@ const AddCategory = () => {
             <label className="input-group input-group-vertical">
               <span>Price</span>
               <input
+                name="price"
                 type="number"
                 placeholder="$ toy price "
                 className="input input-bordered"
@@ -77,7 +94,10 @@ const AddCategory = () => {
             <label className="input-group input-group-vertical">
               <span>Ratings</span>
               <input
+                max={5} 
+                min={1}
                 type="number"
+                name="rating"
                 className="input input-bordered"
               />
             </label>
@@ -87,15 +107,15 @@ const AddCategory = () => {
               <span>Available Quantity</span>
               <input
                 type="number"
-                placeholder=""
+                name="quantity"
                 className="input input-bordered"
               />
             </label>
           </div>
           <div className="w-4/1">
-          <label className="input-group input-group-vertical">
+          <label  className="input-group input-group-vertical">
               <span className="text-2xl">Sub Categoroy</span>
-              <select name="select" id="">
+              <select name="category" name="select" id="">
                 <option value="Robotics">Robotics</option>
                 <option value="Cars">Cars</option>
                 <option value="Phones">Phones</option>
@@ -105,63 +125,17 @@ const AddCategory = () => {
 
           </div>
         </div>
-        <label>
-        Detail Description:
+        
         <textarea
+          placeholder="description your toy"
           name="detailDescription"
-          rows='50'
-          cols='10'
-        //   value={toyData.detailDescription}
-        //   onChange={handleInputChange}
+          rows='10'
+          cols='100'
+          className="p-4 rounded"
+        
         />
-      </label>
+      
       <br />
-
-        {/* <br />
-        <div>
-          <div>
-            <p className="w-52">Seller Name:</p>
-            <input type="text" name="sellerName" />
-          </div>
-
-          <div>
-            <p className="w-52">Seller Email:</p>
-            <input type="email" name="sellerEmail" />
-          </div>
-        </div>
-
-        <br />
-        <div>
-          <div>
-            <p className="w-52">Subcategory:</p>
-            <input type="text" name="subCategory" />
-          </div>
-
-          <div>
-            <p className="w-52">Price:</p>
-            <input type="number" name="price" />
-          </div>
-        </div>
-        <br />
-        <div>
-          <div>
-            <p className="w-52">Rating:</p>
-            <input type="number" name="rating" />
-          </div>
-
-          <div>
-            <p className="w-52">Quantity:</p>
-            <input type="number" name="quantity" />
-          </div>
-        </div>
-
-        <br />
-
-        <div>
-          <p className="w-52">Detail Description:</p>
-          <textarea name="detailDescription" />
-        </div>
-        <br /> */}
 
         <button type="submit">Submit</button>
       </form>

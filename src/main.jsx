@@ -11,6 +11,7 @@ import AllCategory from "./Home/Rout/AllCategory/AllCategory";
 import '@smastrom/react-rating/style.css'
 import PriveteRout from "./PriveteRout/PriveteContext/PriveteRout";
 import AddCategory from "./AddCategory/AddCategory";
+import CategoryDetail from "./Home/CategoryDetail";
 
 const router = createBrowserRouter([
   {
@@ -24,8 +25,12 @@ const router = createBrowserRouter([
       {
         path:"/categorys",
         element: <PriveteRout><AllCategory></AllCategory></PriveteRout>,
-        // loader: () => fetch('https://toy-server-site-nine.vercel.app/toys')
         
+      },
+      {
+        path: '/toys/:id',
+        element: <PriveteRout><CategoryDetail></CategoryDetail></PriveteRout>,
+        loader: ( {params})=> fetch(`http://localhost:5000/toys/${params.id}`)
       }
     ],
   },
