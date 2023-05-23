@@ -1,4 +1,6 @@
 import React from "react";
+import { toastify } from "../Share/Toastify/Toastify";
+import { ToastContainer } from "react-toastify";
 
 const AddCategory = () => {
 
@@ -18,14 +20,24 @@ const AddCategory = () => {
       name,sellerName,email, photo,price , rating, quantity,category
     }
 
-    fetch('')
+    fetch('http://localhost:5000/addtoy', {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json'
+    },
+    body: JSON.stringify(items)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if(data.acknowledged){
+        toastify('Toy add successfull ')
+        console.log('added ')
+      }
+      console.log('not added')
+    })
   };
 
-  const options = [5, 10, 15, 20];
-  function handleSelectChange(event) {
-      setItemsPerPage(parseInt(event.target.value));
-      setCurrentPage(0);
-  }
+  
   return (
     <div className="my-4 px-10 py-20 bg-opacity-40 bg-gradient-to-b from-purple-600 via-cyan-200 to-pink-500 ">
       <form onSubmit={handleSubmit}>
@@ -47,7 +59,7 @@ const AddCategory = () => {
               <input
                 type="text"
                 name="sellerName"
-                placeholder="info@site.com"
+                placeholder="enter your name"
                 className="input input-bordered"
               />
             </label>
@@ -72,7 +84,6 @@ const AddCategory = () => {
               <input
                 name="photo"
                 type="url"
-                placeholder="info@site.com"
                 className="input input-bordered"
               />
             </label>            
@@ -115,7 +126,7 @@ const AddCategory = () => {
           <div className="w-4/1">
           <label  className="input-group input-group-vertical">
               <span className="text-2xl">Sub Categoroy</span>
-              <select name="category" name="select" id="">
+              <select  name="select" id="">
                 <option value="Robotics">Robotics</option>
                 <option value="Cars">Cars</option>
                 <option value="Phones">Phones</option>
@@ -131,14 +142,26 @@ const AddCategory = () => {
           name="detailDescription"
           rows='10'
           cols='100'
-          className="p-4 rounded"
+          className="p-4 rounded "
         
         />
       
       <br />
 
-        <button type="submit">Submit</button>
+        <button className="btn btn-primary" type="submit">Submit</button>
       </form>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };
