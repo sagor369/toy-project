@@ -18,7 +18,6 @@ const AddCategory = () => {
     const quantity = parseInt(form.quantity.value) 
     const subCategory = form.select.value
     const detailDescription = form.detailDescription.value
-    console.log( typeof rating,price)
 
     const items = {
       name,sellerName,sellerEmail, pictureUrl ,price ,detailDescription, rating, quantity,subCategory
