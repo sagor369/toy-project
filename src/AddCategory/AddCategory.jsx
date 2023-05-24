@@ -1,6 +1,8 @@
 import React from "react";
 import { toastify } from "../Share/Toastify/Toastify";
 import { ToastContainer } from "react-toastify";
+import Header from "../Share/Header/Header";
+import Footer from "../Share/Footer/Footer";
 
 const AddCategory = () => {
 
@@ -9,18 +11,20 @@ const AddCategory = () => {
     const form = event.target
     const name = form.name.value 
     const sellerName = form.sellerName.value 
-    const email = form.email.value 
-    const photo = form.photo.value 
-    const price = form.price.value 
-    const rating = form.rating.value 
-    const quantity = form.quantity.value 
-    const category = form.select.value
+    const sellerEmail = form.email.value 
+    const pictureUrl = form.photo.value 
+    const price = parseInt(form.price.value) 
+    const rating = parseFloat(form.rating.value) 
+    const quantity = parseInt(form.quantity.value) 
+    const subCategory = form.select.value
+    const detailDescription = form.detailDescription.value
+    console.log( typeof rating,price)
 
     const items = {
-      name,sellerName,email, photo,price , rating, quantity,category
+      name,sellerName,sellerEmail, pictureUrl ,price ,detailDescription, rating, quantity,subCategory
     }
 
-    fetch('http://localhost:5000/addtoy', {
+    fetch('https://toy-server-site-nine.vercel.app/addtoy', {
       method: "POST",
       headers: {
         'content-type': 'application/json'
@@ -39,10 +43,14 @@ const AddCategory = () => {
 
   
   return (
+    <div>
+      <Header></Header>
+
     <div className="my-4 px-10 py-20 bg-opacity-40 bg-gradient-to-b from-purple-600 via-cyan-200 to-pink-500 ">
+      <h1 className="text-center text-4xl border-b pb-4 font-bold text-pink-300 mb-6 ">Add Your Toy </h1>
       <form onSubmit={handleSubmit}>
-        <div className="flex gap-4 mb-4">
-          <div className="w-1/2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div className="">
             <label className="input-group input-group-vertical">
               <span>Toy Name</span>
               <input
@@ -53,7 +61,7 @@ const AddCategory = () => {
               />
             </label>
           </div>
-          <div className="w-1/2">
+          <div className="">
             <label className="input-group input-group-vertical">
               <span>Seller Name</span>
               <input
@@ -65,8 +73,8 @@ const AddCategory = () => {
             </label>
           </div>
         </div>
-        <div className="flex gap-4 mb-4">
-          <div className="w-1/2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div className="">
             <label className="input-group input-group-vertical">
               <span>Seller Email</span>
               <input
@@ -77,7 +85,7 @@ const AddCategory = () => {
               />
             </label>
           </div>
-          <div className="w-1/2">
+          <div className="">
           
             <label className="input-group input-group-vertical">
               <span>Picture Url</span>
@@ -89,8 +97,8 @@ const AddCategory = () => {
             </label>            
           </div>
         </div>
-        <div className="flex gap-4 mb-4">
-          <div className="w-1/4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+          <div className="">
             <label className="input-group input-group-vertical">
               <span>Price</span>
               <input
@@ -101,7 +109,7 @@ const AddCategory = () => {
               />
             </label>
           </div>
-          <div className="w-1/4">
+          <div className="">
             <label className="input-group input-group-vertical">
               <span>Ratings</span>
               <input
@@ -113,7 +121,7 @@ const AddCategory = () => {
               />
             </label>
           </div>
-          <div className="w-1/4">
+          <div className="">
             <label className="input-group input-group-vertical">
               <span>Available Quantity</span>
               <input
@@ -123,13 +131,13 @@ const AddCategory = () => {
               />
             </label>
           </div>
-          <div className="w-4/1">
+          <div className="">
           <label  className="input-group input-group-vertical">
               <span className="text-2xl">Sub Categoroy</span>
               <select  name="select" id="">
-                <option value="Robotics">Robotics</option>
-                <option value="Cars">Cars</option>
-                <option value="Phones">Phones</option>
+                <option value="robotics">Robotics</option>
+                <option value="cars">Cars</option>
+                <option value="phones">Phones</option>
             </select>
             </label>
             
@@ -141,7 +149,7 @@ const AddCategory = () => {
           placeholder="description your toy"
           name="detailDescription"
           rows='10'
-          cols='100'
+          cols="50"
           className="p-4 rounded "
         
         />
@@ -162,6 +170,8 @@ const AddCategory = () => {
         pauseOnHover
         theme="light"
       />
+    </div>
+    <Footer></Footer>
     </div>
   );
 };

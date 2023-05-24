@@ -51,7 +51,7 @@ const Header = () => {
                 Add Toys
               </NavLink>
               <NavLink
-                to="f"
+                to="/myToys"
                 className={({ isActive }) =>
                   isActive
                     ? " bg-black p-3 rounded bg-opacity-70 mr-4 text-xl"

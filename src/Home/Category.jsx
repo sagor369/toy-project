@@ -10,7 +10,7 @@ const Category = ({ category }) => {
   return (
     <div className="card mb-4 w-96 bg-base-100 shadow-xl">
       <figure>
-        <img src={pictureUrl} alt="Shoes" />
+        <img className="w-3/4 mt-4 rounded h-64" src={pictureUrl} alt="Shoes" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{name}</h2>

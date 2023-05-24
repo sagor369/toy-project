@@ -7,18 +7,21 @@ const AllCategory = () => {
   const [robot, setRobot] = useState([]);
   const [cars, setCars] = useState([]);
   const [phones, setPhones] = useState([]);
-  useEffect(async () => {
-    await fetch("https://toy-server-site-nine.vercel.app/toys/robotics")
+  useEffect( () => {
+     fetch("https://toy-server-site-nine.vercel.app/toys/robotics")
       .then((res) => res.json())
       .then((data) => setRobot(data));
 
-    await fetch("https://toy-server-site-nine.vercel.app/toys/cars")
+     fetch("https://toy-server-site-nine.vercel.app/toys/cars")
       .then((res) => res.json())
       .then((data) => setCars(data));
 
-    await fetch("https://toy-server-site-nine.vercel.app/toys/phones")
+     fetch("https://toy-server-site-nine.vercel.app/toys/phones")
       .then((res) => res.json())
       .then((data) => setPhones(data));
+
+     
+      
   }, []);
 
   return (
@@ -29,24 +32,6 @@ const AllCategory = () => {
       <h2 className="text-5xl font-bold text-center py-4 text-pink-300 uppercase border-b mb-5">
         all category
       </h2>
-      {/* <Tabs>
-                <TabList>
-                    <Tab>
-                    robotics
-                    </Tab>
-                    <Tab>
-                    phones
-                    </Tab>
-                    <Tab>
-                    cars
-                    </Tab>
-                </TabList>
-            </Tabs>
-            <TabPanel>
-                <h2>robotics </h2>
-                <h2>phone </h2>
-                <h2>cars </h2>
-            </TabPanel> */}
 
       <h2 className="text-2xl font-bold w-72 bg-orange-500 mt-10 py-4 mb-6 text-white pl-4">
         Robotics sections
