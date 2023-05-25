@@ -13,6 +13,7 @@ import PriveteRout from "./PriveteRout/PriveteContext/PriveteRout";
 import AddCategory from "./AddCategory/AddCategory";
 import CategoryDetail from "./Home/CategoryDetail";
 import MyToys from "./Home/Rout/MyToys/MyToys";
+import Blog from "./UserLog/Blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
     element: <PriveteRout><MyToys></MyToys></PriveteRout>
     
     
+  },
+  {
+    path: 'blog',
+    element: <Blog></Blog>
   }
 ]);
 

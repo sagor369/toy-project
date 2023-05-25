@@ -68,7 +68,7 @@ const Header = () => {
                 ? " bg-black p-3 rounded bg-opacity-70 mr-4 text-xl"
                 : "mr-4 text-xl"
             }
-            to="/"
+            to="/blog"
           >
             Blogs
           </NavLink>
