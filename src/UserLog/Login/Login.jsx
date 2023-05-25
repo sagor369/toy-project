@@ -44,7 +44,8 @@ const Login = () => {
       <h1 className="text-5xl font-bold text-center mt-2 py-4 border-b text-pink-900">
         Login now
       </h1>
-      <div className="card-body w-1/2 mx-auto ">
+      {/* <div className="card-body w-1/2 mx-auto "> */}
+      <div className="card-body mx-auto rounded my-10 flex-shrink-0 w-1/2 shadow-2xl bg-base-100 ">
         <form onSubmit={handleLogin}>
           <div className="form-control">
             <label className="label">
@@ -70,7 +71,7 @@ const Login = () => {
           
             <label className="">
               Create a new 
-              <Link to="/register" className=" ml-2 text-orange-100 link link-hover">
+              <Link to="/register" className=" ml-2 text-blue-400 link link-hover">
                 Register
               </Link>
             </label>

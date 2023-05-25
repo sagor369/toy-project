@@ -6,6 +6,7 @@ import Header from "../../../Share/Header/Header";
 import { deleteToast, toastDelete } from "../../../Share/Toastify/Toastify";
 import { ToastContainer } from "react-toastify";
 import Swal from 'sweetalert2'
+import Footer from "../../../Share/Footer/Footer";
 
 const MyToys = () => {
   const [category, setCategory] = useState([]);
@@ -70,6 +71,7 @@ const MyToys = () => {
           ))}
         </tbody>
       </table>
+      <Footer></Footer>
       <ToastContainer
         position="top-center"
         autoClose={5000}
