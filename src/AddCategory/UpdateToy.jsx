@@ -19,7 +19,7 @@ const UpdateToy = () => {
     const data = {
         name, price, quantity,detailDescription
     }
-    fetch(`http://localhost:5000/update/${_id}`, {
+    fetch(`https://toy-server-site-nine.vercel.app/update/${_id}`, {
     method:'put',
     headers:{
         'content-type': 'application/json'
