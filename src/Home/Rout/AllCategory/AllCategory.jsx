@@ -18,13 +18,12 @@ const AllCategory = () => {
     console.log('ami avar asci')
     async function loadData(){
 
-      const respons = await fetch(`http://localhost:5000/toys?page=${currentPage}&perPage=${perPage}`)
+      const respons = await fetch(`https://toy-server-site-nine.vercel.app/toys?page=${currentPage}&perPage=${perPage}`)
       const data = await respons.json() 
       setRobot(data) 
     }
     loadData()
-    // .then((res) => res.json())
-      // .then((data) => setRobot(data));
+   
   }, [currentPage]);
 
   const sortHandle = () => {

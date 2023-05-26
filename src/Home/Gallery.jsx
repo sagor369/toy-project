@@ -28,14 +28,20 @@ const Gallery = () => {
         <AutoplaySlider
           animation="cubeAnimation"
           play={true}
-          cancelOnInteraction={false} // should stop playing on user interaction
+          cancelOnInteraction={false} 
           interval={6000}
+          screens={[
+            {
+              backgroundColor: 'white',
+              border: '10px'
+            }
+          ]}
           
         >
           {datas.map((data) => (
             <div key={data._id}>
               <div>
-                <img  src={data.pictureUrl} />
+                <img className="w-full"  src={data.pictureUrl} />
               </div>
             </div>
           ))}

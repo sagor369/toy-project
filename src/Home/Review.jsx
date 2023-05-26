@@ -18,7 +18,7 @@ const Review = () => {
       <h1 className="w-52 border-b border-orange-600 text-2xl font-bold pb-2 mb-4">Customer Review</h1>
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
         {review.map((data) => (
-          <div className="card w-full bg-base-100 shadow-xl">
+          <div className="card w-3/4 mx-auto md:w-full bg-base-100 shadow-xl">
             <figure>
               <img
                 src={data.photo}
