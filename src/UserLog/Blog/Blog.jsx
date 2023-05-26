@@ -4,8 +4,10 @@ import Footer from "../../Share/Footer/Footer";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Aos from "aos";
+import useTitle from "../../Share/UseTitle/useTitle";
 
 const Blog = () => {
+  useTitle('Blog')
   Aos.init()
   return (
     <div>

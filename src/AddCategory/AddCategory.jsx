@@ -3,8 +3,13 @@ import { toastify } from "../Share/Toastify/Toastify";
 import { ToastContainer } from "react-toastify";
 import Header from "../Share/Header/Header";
 import Footer from "../Share/Footer/Footer";
+import { AuthContext } from "../PriveteRout/PriveteContext/PriveteContext";
+import { useContext } from "react";
+import useTitle from "../Share/UseTitle/useTitle";
 
 const AddCategory = () => {
+  useTitle('Add Toy')
+  const {user} = useContext(AuthContext)
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -89,6 +94,7 @@ const AddCategory = () => {
                   name="email"
                   placeholder="info@site.com"
                   className="input input-bordered"
+                  defaultValue={user?.email}
                   required
                 />
               </label>

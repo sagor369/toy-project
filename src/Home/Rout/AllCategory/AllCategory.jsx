@@ -4,6 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "react-tabs/style/react-tabs.css";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../../Share/UseTitle/useTitle";
 
 const AllCategory = () => {
   const [robot, setRobot] = useState([]);
@@ -13,6 +14,7 @@ const AllCategory = () => {
   const totalPages = Math.ceil(totalData / perPage);
   const pageNumber = [...Array(totalPages).keys()];
   console.log(currentPage);
+  useTitle('All Toy')
 
   useEffect( () => {
     console.log('ami avar asci')
@@ -30,6 +32,7 @@ const AllCategory = () => {
     fetch("https://toy-server-site-nine.vercel.app/toys/sort")
       .then((res) => res.json())
       .then((data) => setRobot(data));
+      
   };
   AOS.init();
 

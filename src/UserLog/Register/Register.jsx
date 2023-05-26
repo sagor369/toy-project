@@ -11,24 +11,6 @@ import { Link } from 'react-router-dom';
 
 const Register = () => {
 
-    // react toastify code 
-    // const successToastify = (data) => {
-    //   // console.log(message)
-    //   toast.success(data, {
-    //   position: "top-center",
-    //   autoClose: 5000,
-    //   hideProgressBar: false,
-    //   closeOnClick: true,
-    //   pauseOnHover: true,
-    //   draggable: true,
-    //   progress: undefined,
-    //   theme: "light",
-    //   })};
-
-      
-
-    
-
     const {register, googleSignIn} = useContext(AuthContext)
 
     // email & register from handler function 
@@ -48,7 +30,7 @@ const Register = () => {
             toastify("Registation successfull")
         })
         .catch(error =>{
-            console.log(error.code)
+          <Error>{error}</Error>
         })
 
         from.reset()
@@ -65,7 +47,7 @@ const Register = () => {
             successToastify()
         })
         .catch(error =>{
-            console.log(error.code)
+            <Error>{error}</Error>
         })
         
     }

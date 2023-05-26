@@ -6,8 +6,12 @@ import {  toastDelete } from "../../../Share/Toastify/Toastify";
 import { ToastContainer } from "react-toastify";
 import Swal from 'sweetalert2'
 import Footer from "../../../Share/Footer/Footer";
+import Error from "../../../Share/Error/Error";
+import { Link } from "react-router-dom";
+import useTitle from "../../../Share/UseTitle/useTitle";
 
 const MyToys = () => {
+  useTitle('My Toys')
   const [category, setCategory] = useState([]);
   const { user } = useContext(AuthContext);
   const email = user.email;
@@ -34,6 +38,9 @@ const MyToys = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        if(data.error){
+          <Error></Error>
+        }
         if (data.deletedCount > 0) {
           Swal.fire(
             'Deleted!',
@@ -81,10 +88,12 @@ const MyToys = () => {
                   className="cursor-pointer"
                   onClick={() => handleEdit(data._id)}
                 />{" "}
+                <Link >
                 <FaArchive
                   onClick={() => handleDelete(data._id)}
                   className="cursor-pointer"
                 />
+                </Link>
               </td>
             </tr>
           ))}

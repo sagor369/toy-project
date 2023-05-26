@@ -14,19 +14,23 @@ import AddCategory from "./AddCategory/AddCategory";
 import CategoryDetail from "./Home/CategoryDetail";
 import MyToys from "./Home/Rout/MyToys/MyToys";
 import Blog from "./UserLog/Blog/Blog";
+import Error from "./Share/Error/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    errorElement:<Error></Error>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
+        
       },
       {
         path:"/categorys",
         element: <PriveteRout><AllCategory></AllCategory></PriveteRout>,
+        errorElement:<Error></Error>,
         loader: () => fetch('https://toy-server-site-nine.vercel.app/data')
         
       },
@@ -40,24 +44,29 @@ const router = createBrowserRouter([
   {
     path: "login",
     element: <Login></Login>,
+    errorElement:<Error></Error>,
   },
   {
     path: "register",
     element: <Register></Register>,
+    errorElement:<Error></Error>,
   },
   {
     path: '/addtoy',
-    element : <AddCategory></AddCategory>
+    element : <AddCategory></AddCategory>,
+    errorElement:<Error></Error>,
   },
   {
     path: '/myToys',
-    element: <PriveteRout><MyToys></MyToys></PriveteRout>
+    element: <PriveteRout><MyToys></MyToys></PriveteRout>,
+    errorElement:<Error></Error>,
     
     
   },
   {
     path: 'blog',
-    element: <Blog></Blog>
+    element: <Blog></Blog>,
+    errorElement:<Error></Error>,
   }
 ]);
 

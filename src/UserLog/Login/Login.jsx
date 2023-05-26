@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import Header from "../../Share/Header/Header";
 import Footer from "../../Share/Footer/Footer";
@@ -22,6 +22,9 @@ const Login = () => {
     const from = event.target 
     const email = from.email.value 
     const password = from.password.value 
+    const [errorCode , setCode] = useState(null)
+
+
     login(email, password)
     .then(result => {
       const user = result.user 
@@ -33,13 +36,15 @@ const Login = () => {
     })
 
     .catch(error =>{
-      console.log(error.code)
+      setCode(error.code)
     })
 
   }
 
   return (
+
     <div className="min-h-screen bg-purple-400">
+
         <Header></Header>
       <h1 className="text-5xl font-bold text-center mt-2 py-4 border-b text-pink-900">
         Login now
