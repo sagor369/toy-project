@@ -1,12 +1,17 @@
 import React from "react";
 import Header from "../../Share/Header/Header";
 import Footer from "../../Share/Footer/Footer";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Aos from "aos";
 
 const Blog = () => {
+  Aos.init()
   return (
     <div>
         <Header></Header>
-      <div>
+      <div data-aos="fade-left" data-aos-offset="400" className="bg-gray-400 p-4 my-10 rounded md:w-3/4">
+        <h1 className="text-2xl uppercase underline text-orange-200 py-4">access token</h1>
         <p>
           An access token and a refresh token are commonly used in
           authentication and authorization systems. Here's an overview of what
@@ -16,6 +21,7 @@ const Blog = () => {
           is typically a short-lived token with an expiration time, usually
           ranging from minutes to hours.
         </p>
+        <h2 className="text-xl uppercase underline text-orange-200 py-4">Access tokens stord client-side </h2>
         <p>
           Access tokens should be stored on the client-side in a secure manner
           to prevent unauthorized access. One common approach is to store access
@@ -32,8 +38,10 @@ const Blog = () => {
           secure token handling.
         </p>
       </div>
-      <div>
-        <h1>SQL & NoSQL </h1>
+      <div className="flex justify-end">
+
+      <div data-aos="fade-right" data-aos-offset="400" className="bg-gray-400 p-4 my-10 rounded md:w-3/4 ">
+        <h1 className="text-2xl uppercase underline text-orange-200 py-4">SQL  </h1>
         <p>
           SQL: SQL databases follow a rigid, predefined schema with structured
           tables and relationships. They use a tabular format where data is
@@ -42,6 +50,8 @@ const Blog = () => {
           Scaling horizontally across multiple servers can be complex and may
           require data partitioning or sharding techniques.
         </p>
+        <h1 className="text-2xl uppercase underline text-orange-200 py-4">NoSQL  </h1>
+
         <p>
           NoSQL: NoSQL databases offer a flexible schema or schema-less design.
           They allow for the storage of unstructured or semi-structured data,
@@ -51,8 +61,10 @@ const Blog = () => {
           seamless scalability and handling of large volumes of data.
         </p>
       </div>
-      <div>
-        <h1>express JS & node js</h1>
+      </div>
+      <div data-aos="fade-left" data-aos-offset="400" className="bg-gray-400 p-4 my-10 rounded md:w-3/4">
+        <h1 className="text-2xl uppercase underline text-orange-200 py-4">Express.js  </h1>
+
         <p>
           Express.js is a popular and minimalist web application framework for
           Node.js. It provides a set of robust features and utilities to build
@@ -66,8 +78,10 @@ const Blog = () => {
           before processing a request. Middleware functions can handle tasks
           like logging, authentication, parsing request bodies, and more.
         </p>
+        <h1 className="text-2xl uppercase underline text-orange-200 py-4">Nest JS</h1>
+
         <p>
-          NestJS is a progressive, TypeScript-based web application framework
+          Nest JS is a progressive, TypeScript-based web application framework
           for building efficient, scalable, and maintainable server-side
           applications. It is inspired by Angular and combines elements of
           object-oriented programming, functional programming, and reactive
@@ -82,8 +96,11 @@ const Blog = () => {
           and injection of dependencies into application components.
         </p>
       </div>
-      <div>
-        <h1>MongoDB</h1>
+      <div className="flex justify-end">
+
+      <div data-aos="fade-right" data-aos-offset="400" className="bg-gray-400 p-4 my-10 rounded md:w-3/4 ">
+        <h1 className="text-2xl uppercase underline text-orange-200 py-4">MongoDB aggregate</h1>
+
         <p>
           In MongoDB, the aggregate function is a powerful feature that allows
           you to perform advanced data aggregation operations on your data. It
@@ -96,6 +113,7 @@ const Blog = () => {
           transformation. The stages are processed in the order they appear in
           the pipeline
         </p>
+      </div>
       </div>
       <Footer></Footer>
     </div>
