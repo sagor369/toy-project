@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../PriveteRout/PriveteContext/PriveteContext";
-import DataTable from "react-data-table-component";
 import { FaEdit, FaArchive } from "react-icons/fa";
 import Header from "../../../Share/Header/Header";
-import { deleteToast, toastDelete } from "../../../Share/Toastify/Toastify";
+import {  toastDelete } from "../../../Share/Toastify/Toastify";
 import { ToastContainer } from "react-toastify";
 import Swal from 'sweetalert2'
 import Footer from "../../../Share/Footer/Footer";
@@ -12,22 +11,42 @@ const MyToys = () => {
   const [category, setCategory] = useState([]);
   const { user } = useContext(AuthContext);
   const email = user.email;
+  const [load, setLoad] = useState(false)
   useEffect(() => {
     fetch(`https://toy-server-site-nine.vercel.app/user/${email}`)
       .then((res) => res.json())
       .then((data) => setCategory(data));
-  }, []);
+  }, [load]);
 
   const handleDelete = (id) => {
-    fetch(`https://toy-server-site-nine.vercel.app/remove/${id}`, {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://toy-server-site-nine.vercel.app/remove/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount > 0) {
-          toastDelete("delete successfull");
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+          setLoad(!load)
         }
       });
+        
+      }
+    })
+    
   };
   const handleEdit = (id) => {
     console.log("edite id ", id);

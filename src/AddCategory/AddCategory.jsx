@@ -41,9 +41,7 @@ const AddCategory = () => {
       .then((data) => {
         if (data.acknowledged) {
           toastify("Toy add successfull ");
-          console.log("added ");
         }
-        console.log("not added");
       });
   };
 
@@ -65,6 +63,7 @@ const AddCategory = () => {
                   name="name"
                   placeholder="toy name"
                   className="input input-bordered"
+                  required
                 />
               </label>
             </div>
@@ -76,6 +75,7 @@ const AddCategory = () => {
                   name="sellerName"
                   placeholder="enter your name"
                   className="input input-bordered"
+                  required
                 />
               </label>
             </div>
@@ -89,6 +89,7 @@ const AddCategory = () => {
                   name="email"
                   placeholder="info@site.com"
                   className="input input-bordered"
+                  required
                 />
               </label>
             </div>
@@ -99,6 +100,7 @@ const AddCategory = () => {
                   name="photo"
                   type="url"
                   className="input input-bordered"
+                  required
                 />
               </label>
             </div>
@@ -112,6 +114,7 @@ const AddCategory = () => {
                   type="number"
                   placeholder="$ toy price "
                   className="input input-bordered"
+                  required
                 />
               </label>
             </div>
@@ -124,6 +127,7 @@ const AddCategory = () => {
                   type="number"
                   name="rating"
                   className="input input-bordered"
+                  required
                 />
               </label>
             </div>
@@ -134,6 +138,7 @@ const AddCategory = () => {
                   type="number"
                   name="quantity"
                   className="input input-bordered"
+                  required
                 />
               </label>
             </div>
