@@ -22,8 +22,7 @@ const Login = () => {
     const from = event.target 
     const email = from.email.value 
     const password = from.password.value 
-    const [errorCode , setCode] = useState(null)
-
+    
 
     login(email, password)
     .then(result => {
@@ -44,7 +43,7 @@ const Login = () => {
   return (
 
     <div className="min-h-screen bg-purple-400">
-
+      
         <Header></Header>
       <h1 className="text-5xl font-bold text-center mt-2 py-4 border-b text-pink-900">
         Login now
@@ -86,7 +85,7 @@ const Login = () => {
           </div>
         </form>
         <div className="divider">OR</div>
-        <div className="grid h-20 card bg-orange-300 rounded-box place-items-center">
+        <div className="grid cursor-pointer h-20 card bg-orange-300 rounded-box place-items-center">
           <div>
             <div className="flex gap-2 items-center">
               <FaGoogle className="w-8 h-8" /> <span>Google</span>

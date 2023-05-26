@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import useTitle from "../../../Share/UseTitle/useTitle";
 
 const MyToys = () => {
-  useTitle('My Toys')
+  useTitle('My Toy')
   const [category, setCategory] = useState([]);
   const { user } = useContext(AuthContext);
   const email = user.email;
@@ -55,9 +55,7 @@ const MyToys = () => {
     })
     
   };
-  const handleEdit = (id) => {
-    console.log("edite id ", id);
-  };
+  
 
   return (
     <div>
@@ -83,17 +81,16 @@ const MyToys = () => {
               <td className="col-span-1  "> {data.price}</td>
               <td className="col-span-1  "> {data.quantity}</td>
               <td className="col-span-1  justify-evenly  flex ">
-                {" "}
+                <Link to={`/update/${data._id}`}>
                 <FaEdit
                   className="cursor-pointer"
-                  onClick={() => handleEdit(data._id)}
-                />{" "}
-                <Link >
+                />
+                </Link>
                 <FaArchive
                   onClick={() => handleDelete(data._id)}
                   className="cursor-pointer"
                 />
-                </Link>
+                
               </td>
             </tr>
           ))}

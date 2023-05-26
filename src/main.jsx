@@ -15,6 +15,7 @@ import CategoryDetail from "./Home/CategoryDetail";
 import MyToys from "./Home/Rout/MyToys/MyToys";
 import Blog from "./UserLog/Blog/Blog";
 import Error from "./Share/Error/Error";
+import UpdateToy from "./AddCategory/UpdateToy";
 
 const router = createBrowserRouter([
   {
@@ -67,6 +68,11 @@ const router = createBrowserRouter([
     path: 'blog',
     element: <Blog></Blog>,
     errorElement:<Error></Error>,
+  },
+  {
+    path: '/update/:id',
+    element: <UpdateToy></UpdateToy>,
+    loader: ({params}) => fetch(`https://toy-server-site-nine.vercel.app/toy/${params.id}`)
   }
 ]);
 
