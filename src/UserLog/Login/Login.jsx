@@ -35,7 +35,7 @@ const Login = () => {
     })
 
     .catch(error =>{
-      setCode(error.code)
+      console.log(error.code )
     })
 
   }

@@ -8,7 +8,6 @@ const Header = () => {
   const { user, logOUt } = useContext(AuthContext);
   const photo = user?.photoURL;
   const [open, setOpen] = useState(false);
-  console.log(open);
   return (
     <div className="navbar relative  px-8 py-5 bg-gradient-to-r from-purple-500 to-pink-500">
       <div className="flex-1">

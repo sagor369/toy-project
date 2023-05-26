@@ -18,7 +18,7 @@ const Category = ({ category }) => {
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
         <p>
-          {" "}
+          
           Price: $<span>{price}</span>
         </p>
         <p className="flex gap-2 items-center">
@@ -27,7 +27,7 @@ const Category = ({ category }) => {
             style={{ maxWidth: 100 }}
             value={Math.round(ratings)}
             readOnly
-          />{" "}
+          />
           <span>{ratings}</span>
         </p>
 
