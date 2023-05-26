@@ -27,6 +27,7 @@ const router = createBrowserRouter([
       {
         path:"/categorys",
         element: <PriveteRout><AllCategory></AllCategory></PriveteRout>,
+        loader: () => fetch('https://toy-server-site-nine.vercel.app/data')
         
       },
       {
