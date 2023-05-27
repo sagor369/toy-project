@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import logo from '../../../public/logo.ico'
 
 const Footer = () => {
   return (
     <footer className="footer items-center p-10 bg-opacity-75 my-20 bg-purple-500 text-neutral-content">
       <div>
-        <img className="h-20" src="/public/logo.ico" alt="" />
+        <img className="h-20" src={logo} alt="" />
         <p>
           Digital Toy Shop Industries Ltd.
           <br />

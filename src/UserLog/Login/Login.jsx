@@ -8,7 +8,7 @@ import { toastify } from "../../Share/Toastify/Toastify";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const {login} = useContext(AuthContext)
+  const {login , googleSignIn } = useContext(AuthContext)
   const location = useLocation()
   const form = location.state?.from?.pathname || '/'
   const navigate = useNavigate()
@@ -39,6 +39,21 @@ const Login = () => {
     })
 
   }
+
+
+   // handle google register 
+   const googleSigninHandler = () =>{
+    googleSignIn()
+    .then(result => {
+        const user = result.user
+        console.log(user)
+        navigate(form, { replace: true })
+    })
+    .catch(error =>{
+        <Error>{error}</Error>
+    })
+    
+}
 
   return (
 
@@ -87,7 +102,7 @@ const Login = () => {
         <div className="divider">OR</div>
         <div className="grid cursor-pointer h-20 card bg-orange-300 rounded-box place-items-center">
           <div>
-            <div className="flex gap-2 items-center">
+            <div onClick={googleSigninHandler} className="flex gap-2 items-center">
               <FaGoogle className="w-8 h-8" /> <span>Google</span>
             </div>
           </div>

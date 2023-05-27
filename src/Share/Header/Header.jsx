@@ -3,15 +3,17 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../PriveteRout/PriveteContext/PriveteContext";
 import { FaUser, FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
+import logo from '../../../public/logo.ico'
 
 const Header = () => {
   const { user, logOUt } = useContext(AuthContext);
-  const photo = user?.photoURL;
+  // const photo = user?.photoURL;
+  // console.log(user.photoURL)
   const [open, setOpen] = useState(false);
   return (
     <div className="navbar relative  px-8 py-5 bg-gradient-to-r from-purple-500 to-pink-500">
       <div className="flex-1">
-        <img className="h-14" src="/public/logo.ico" alt="" />
+        <img className="h-14" src={logo} alt="" />
         <h2 className="text-2xl ml-2 font-sans">
           {" "}
           <span className="text-pink-200 font-bold "> digital</span>{" "}
@@ -95,7 +97,7 @@ const Header = () => {
               </Link>
             </div>
           ) : (
-            <div className="md:flex gap-4">
+            <div className="md:flex gap-3 items-center ">
               <button onClick={logOUt} className="btn ml-3">
                 Log out
               </button>
@@ -107,7 +109,7 @@ const Header = () => {
                 {!user.photoURL ? (
                   <FaUser className="w-10 h-10" />
                 ) : (
-                  <img className=" h-10 w-10 " src={photo} alt="user photo" />
+                  <img className=" h-10 w-10 rounded-full " src={user?.photoURL} alt="user photo" />
                 )}
               </div>
             </div>

@@ -44,7 +44,6 @@ const Register = () => {
         .then(result => {
             const user = result.user
             console.log(user)
-            successToastify()
         })
         .catch(error =>{
             <Error>{error}</Error>
